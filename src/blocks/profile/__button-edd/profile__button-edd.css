@@ -1,0 +1,27 @@
+.profile__button-edd {
+  width: 150px;
+  height: 50px;
+  margin-left: auto;
+  margin-right: 0;
+  margin: 35px 0 35px auto;
+  box-sizing: border-box;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+  background-image: url(../../../images/add\ plus\ button.svg);
+  background-repeat: no-repeat;
+  background-color: #000;
+  background-position: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.profile__button-edd:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 767px) {
+  .profile__button-edd {
+    width: 282px;
+    margin: auto;
+  }
+}

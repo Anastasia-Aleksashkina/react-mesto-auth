@@ -1,0 +1,24 @@
+.root__footer {
+  margin: 0 0 0px 200px;
+  padding-bottom: 60px;
+
+}
+
+@media screen and (max-width: 1279px) {
+  .root__footer {
+    margin: 0 0 0px 100px;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .root__footer {
+    margin: 0 0 0px 50px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .root__footer {
+    margin: 0 19px 36px;
+    padding-bottom: 19px;
+  }
+}

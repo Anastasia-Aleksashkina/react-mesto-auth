@@ -1,0 +1,9 @@
+.popup__title_accept {
+    margin: 34px 36px 38px;
+}
+
+@media screen and (max-width: 767px) {
+    .popup__title_accept {
+        margin: 25px 22px 30px;
+    }
+  }
