@@ -1,0 +1,13 @@
+.popup__title_register-info {
+  width: 358px;
+  text-align: center;
+  margin: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .popup__title_register-info {
+    width: 244px;
+    font-size: 20px;
+    line-height: 24px;
+  }
+}

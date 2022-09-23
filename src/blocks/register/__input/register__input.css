@@ -1,0 +1,16 @@
+.register__input {
+  width: 100%;
+  padding: 0 0 13px;
+  border: none;
+  border-bottom: 2px solid #cccccc;
+  background-color: transparent;
+  color: #cccccc;
+  margin-bottom: 30px;
+}
+
+.register__input::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #cccccc;
+}

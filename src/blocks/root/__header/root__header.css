@@ -1,18 +1,18 @@
 .root__header {
-  margin: 0px 200px 40px;
+  margin: 0px 200px 0px;
   padding-top: 45px;
 }
 
 @media screen and (max-width: 1279px) {
   .root__header {
-    margin: 0px 100px 40px;
+    margin: 0px 100px 0px;
     padding-top: 40px;
   }
 }
 
 @media screen and (max-width: 1023px) {
   .root__header {
-    margin: 0px 50px 40px;
+    margin: 0px 50px 0px;
     padding-top: 35px;
   }
 }
