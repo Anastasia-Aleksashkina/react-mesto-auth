@@ -1,0 +1,13 @@
+.header__user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 46px;
+}
+
+@media screen and (max-width: 767px) {
+  .header__user-info {
+    flex-direction: column;
+    padding: 0 10px 31px 0;
+  }
+}

@@ -1,0 +1,5 @@
+@media screen and (max-width: 767px) {
+  .header__button_log {
+    padding-right: 30px;
+  }
+}

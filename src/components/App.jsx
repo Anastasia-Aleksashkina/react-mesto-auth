@@ -146,7 +146,7 @@ function App() {
         setIsLoggedIn(true);
         localStorage.setItem("jwt", data.token);
         history.push("/");
-        setUserEmail(data.email);
+        setUserEmail(email);
       })
       .catch((err) => {
         console.log(`Ошибка: ${err}`);
@@ -181,8 +181,9 @@ function App() {
     if (!localStorage.getItem("jwt")) return;
     const jwt = localStorage.getItem("jwt");
     // Проверяем токен пользователя
-    return auth.getContent(jwt).then((res) => {
-      if (res) {
+    return auth.getContent(jwt).then((data) => {
+      if (data) {
+        setUserEmail(data.email)
         setIsLoggedIn(true);
         history.push("/");
       }
@@ -197,7 +198,7 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <div className="root">
-          <Header logout={logout} userEmail={userEmail} />
+          <Header logout={logout} userEmail={userEmail} isLoggedIn={isLoggedIn}/>
           <Switch>
             <Route path="/sign-in">
               <Login onLogin={handleLogin} />
