@@ -1,21 +1,20 @@
-import "../index.css";
 import React, { useEffect, useState } from "react";
 import { Route, Switch, useHistory } from "react-router-dom";
-import { api } from "../utils/api";
-import * as auth from "../utils/auth";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
+import Login from "./Login";
+import Register from "./Register";
 import PopupWithForm from "./PopupWithForm";
 import ImagePopup from "./ImagePopup";
-import { CurrentUserContext } from "../contexts/CurrentUserContext";
 import EditProfilePopup from "./EditProfilePopup";
 import EditAvatarPopup from "./EditAvatarPopup";
 import AddPlacePopup from "./AddPlacePopup";
-import Login from "./Login";
-import Register from "./Register";
 import InfoTooltip from "./InfoTooltip";
 import ProtectedRoute from "./ProtectedRoute";
+import { CurrentUserContext } from "../contexts/CurrentUserContext";
+import { api } from "../utils/api";
+import * as auth from "../utils/auth";
 
 function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
@@ -181,13 +180,18 @@ function App() {
     if (!localStorage.getItem("jwt")) return;
     const jwt = localStorage.getItem("jwt");
     // Проверяем токен пользователя
-    return auth.getContent(jwt).then((data) => {
-      if (data) {
-        setUserEmail(data.email)
-        setIsLoggedIn(true);
-        history.push("/");
-      }
-    });
+    return auth
+      .getContent(jwt)
+      .then((data) => {
+        if (data) {
+          setUserEmail(data.email);
+          setIsLoggedIn(true);
+          history.push("/");
+        }
+      })
+      .catch((err) => {
+        console.log(`Ошибка: ${err}`);
+      });
   }
 
   useEffect(() => {
@@ -198,7 +202,11 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
       <div className="page">
         <div className="root">
-          <Header logout={logout} userEmail={userEmail} isLoggedIn={isLoggedIn}/>
+          <Header
+            logout={logout}
+            userEmail={userEmail}
+            isLoggedIn={isLoggedIn}
+          />
           <Switch>
             <Route path="/sign-in">
               <Login onLogin={handleLogin} />
